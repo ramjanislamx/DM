@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakib | Digital Marketing Expert</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #fff;
+      --secondary: #fff;
+      --accent: #e0e7ef;
+      --brand: #1a1a2e;
+      --success: #38b000;
+      --warning: #ffd600;
+      --text: #111;
+      --white: #fff;
+      --shadow: 0 4px 24px rgba(26,26,46,0.10);
+      --deep-pink: #e94560;
+      --deep-blue: #16213e;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', Arial, sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      min-height: 100vh;
+    }
+header {
+  background: linear-gradient(90deg, var(--deep-blue) 60%, var(--brand) 100%);
+  box-shadow: 0 2px 16px rgba(26,26,46,0.13);
+  border-bottom: 2px solid var(--deep-pink);
+  border-radius: 0 0 32px 32px;
+  padding: 24px 0 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  animation: navFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--deep-pink);
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-shadow: 0 2px 8px rgba(233,69,96,0.08);
+}
+
+nav {
+  margin-top: 10px;
+}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 16px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 18px;
+  padding: 6px 16px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  background: transparent;
+  box-shadow: none;
+  position: relative;
+}
+nav a:hover, nav a.active {
+  background: var(--deep-pink);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(233,69,96,0.13);
+  transform: scale(1.08);
+}
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px 20px;
+      background: var(--primary);
+      border-radius: 0 0 48px 48px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+    }
+    .hero .hero-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--accent);
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--brand);
+      font-weight: 800;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 28px;
+      color: #555;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      background: var(--deep-pink);
+      color: #fff;
+      padding: 16px 38px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(233,69,96,0.13);
+      margin: 0 8px;
+      animation: btnPulse 2.2s infinite cubic-bezier(.4,0,.2,1);
+    }
+    .cta-btn:hover {
+      background: var(--deep-blue);
+      color: #fff;
+      transform: scale(1.12) rotate(-2deg);
+      box-shadow: 0 8px 24px rgba(26,26,46,0.18);
+    }
+    @keyframes btnPulse {
+      0%, 100% { box-shadow: 0 4px 16px rgba(233,69,96,0.13); }
+      50% { box-shadow: 0 8px 32px rgba(233,69,96,0.22); }
+    }
+    .section {
+      padding: 60px 20px 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto 0 auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: var(--deep-blue);
+      margin-bottom: 18px;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(26,26,46,0.08);
+    }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      margin-top: 24px;
+    }
+    .about-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--primary);
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+    .about-text {
+      max-width: 500px;
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.7;
+    }
+    .values-list {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .value-badge {
+      background: var(--success);
+      color: var(--deep-blue);
+      border-radius: 18px;
+      padding: 8px 18px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .service-card {
+      background: linear-gradient(135deg, #fff 60%, #f0f0f0 100%);
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(26,26,46,0.10);
+      width: 270px;
+      padding: 32px 22px 28px 22px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid var(--deep-blue);
+      position: relative;
+      animation: cardBounceIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .service-card:hover {
+      transform: translateY(-12px) scale(1.07) rotate(-1deg);
+      box-shadow: 0 12px 32px rgba(26,26,46,0.18);
+      border-color: var(--deep-pink);
+    }
+    @keyframes cardBounceIn {
+      0% { opacity: 0; transform: scale(0.9) translateY(40px); }
+      60% { opacity: 1; transform: scale(1.05) translateY(-8px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--deep-pink);
+      margin-bottom: 12px;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .service-card:hover .service-icon {
+      color: var(--deep-blue);
+      transform: scale(1.2) rotate(-8deg);
+    }
+    .shop-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .shop-card {
+      background: linear-gradient(135deg, var(--accent) 60%, #f8f8fa 100%);
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(26,26,46,0.10);
+      width: 270px;
+      padding: 28px 20px 24px 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid var(--deep-pink);
+      position: relative;
+      animation: cardBounceIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .shop-card:hover {
+      transform: translateY(-12px) scale(1.07) rotate(-1deg);
+      box-shadow: 0 12px 32px rgba(233,69,96,0.18);
+      border-color: var(--deep-blue);
+    }
+    .shop-icon {
+      font-size: 2.2rem;
+      color: var(--deep-blue);
+      margin-bottom: 10px;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .shop-card:hover .shop-icon {
+      color: var(--deep-pink);
+      transform: scale(1.2) rotate(8deg);
+    }
+    .shop-title {
+      font-size: 1.1rem;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .shop-desc {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .shop-price {
+      font-size: 1.1rem;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .buy-btn {
+      background: var(--deep-blue);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-top: 8px;
+      box-shadow: 0 2px 8px rgba(26,26,46,0.13);
+      animation: btnPulse 2.2s infinite cubic-bezier(.4,0,.2,1);
+    }
+    .buy-btn:hover {
+      background: var(--deep-pink);
+      color: #fff;
+      transform: scale(1.12) rotate(1deg);
+      box-shadow: 0 8px 24px rgba(233,69,96,0.18);
+    }
+    .testimonials-carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 32px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      min-width: 320px;
+      max-width: 340px;
+      padding: 28px 22px 22px 22px;
+      text-align: center;
+      border: 2px solid var(--primary);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .testimonial-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 32px rgba(160,160,200,0.18);
+      border-color: var(--accent);
+    }
+    .testimonial-photo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 10px;
+      background: var(--white);
+    }
+    .testimonial-name {
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+    .testimonial-text {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+    .trust-badges {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin: 32px 0 0 0;
+      flex-wrap: wrap;
+    }
+    .trust-badge {
+      background: var(--deep-blue);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 10px 22px;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+    }
+    .client-logos {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin: 24px 0 0 0;
+      flex-wrap: wrap;
+    }
+    .client-logo {
+      height: 38px;
+      opacity: 0.7;
+      filter: grayscale(1);
+      transition: opacity 0.2s, filter 0.2s;
+    }
+    .client-logo:hover {
+      opacity: 1;
+      filter: none;
+    }
+    .contact-form {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 32px 24px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .contact-form input, .contact-form textarea {
+      border: 2px solid var(--primary);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: border 0.2s;
+      resize: none;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+    .contact-form button {
+      background: var(--brand);
+      color: var(--white);
+      border: none;
+      border-radius: 14px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .contact-form button:hover {
+      background: var(--accent);
+      color: var(--brand);
+      transform: scale(1.04);
+    }
+    .contact-links {
+      text-align: center;
+      margin-top: 18px;
+    }
+    .contact-links a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 10px;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .contact-links a:hover {
+      color: var(--accent);
+    }
+    footer {
+      background: linear-gradient(90deg, var(--deep-blue) 60%, var(--deep-pink) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 24px 10px;
+      font-size: 1rem;
+      margin-top: 0;
+      border-radius: 32px 32px 0 0;
+      box-shadow: var(--shadow);
+      letter-spacing: 1px;
+    }
+    @media (max-width: 900px) {
+      .about-content, .services-list, .shop-list, .testimonials-carousel, .client-logos {
+        flex-direction: column;
+        align-items: center;
+      }
+      .section {
+        padding: 40px 8px 24px 8px;
+      }
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .hero h2, .section-title {
+        font-size: 1.3rem;
+      }
+      .about-photo {
+        width: 100px; height: 100px;
+      }
+      .testimonial-card, .shop-card, .service-card {
+        min-width: 90vw;
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rakib | Digital Marketing Expert</h1>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#services">Services</a>
+      <a href="#shop">Shop</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rakib Photo" class="hero-img">
+    <h2>Grow Your Brand with Rakib's Digital Marketing Magic!</h2>
+    <p>Hi, I'm Rakib. I help businesses shine online with creative strategies, powerful tools, and a friendly approach. Ready to boost your business? Let's make your digital dreams come true!</p>
+    <a href="#contact"><button class="cta-btn">Hire Me</button></a>
+    <a href="#shop"><button class="cta-btn">Shop Now</button></a>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-title">About Me</div>
+    <div class="about-content">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rakib Photo" class="about-photo">
+      <div class="about-text">
+        <p>I'm Rakib, a passionate digital marketer with 7+ years of experience helping brands grow online. My mission is to empower entrepreneurs and small businesses with the tools, knowledge, and confidence to succeed in the digital world.</p>
+        <div class="values-list">
+          <span class="value-badge"><i class="fa-solid fa-heart"></i> Friendly</span>
+          <span class="value-badge"><i class="fa-solid fa-lightbulb"></i> Creative</span>
+          <span class="value-badge"><i class="fa-solid fa-handshake"></i> Trustworthy</span>
+          <span class="value-badge"><i class="fa-solid fa-bolt"></i> Results-Driven</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-title">Services</div>
+    <div class="services-list">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="service-title">SEO Optimization</div>
+        <div class="service-desc">Boost your website's ranking and visibility with proven SEO strategies.</div>
+        <div class="service-price">$199</div>
+        <a href="#contact"><button class="cta-btn">Hire Me</button></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <div class="service-title">Social Media Marketing</div>
+        <div class="service-desc">Grow your audience and engagement with creative social campaigns.</div>
+        <div class="service-price">$149</div>
+        <a href="#contact"><button class="cta-btn">Hire Me</button></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <div class="service-title">Email Campaigns</div>
+        <div class="service-desc">Design, automate, and track email campaigns that convert.</div>
+        <div class="service-price">$99</div>
+        <a href="#contact"><button class="cta-btn">Hire Me</button></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <div class="service-title">Content Creation</div>
+        <div class="service-desc">Get high-quality content and visuals tailored to your brand.</div>
+        <div class="service-price">$129</div>
+        <a href="#contact"><button class="cta-btn">Hire Me</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop">
+    <div class="section-title">Shop Digital Products</div>
+    <div class="shop-list">
+      <div class="shop-card">
+        <div class="shop-icon"><i class="fa-solid fa-book"></i></div>
+        <div class="shop-title">Ultimate SEO eBook</div>
+        <div class="shop-desc">Step-by-step guide to mastering SEO for your business.</div>
+        <div class="shop-price">$29</div>
+        <a href="#contact"><button class="buy-btn">Buy Now</button></a>
+      </div>
+      <div class="shop-card">
+        <div class="shop-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="shop-title">Social Media Templates</div>
+        <div class="shop-desc">Editable Canva templates to make your posts pop!</div>
+        <div class="shop-price">$19</div>
+        <a href="#contact"><button class="buy-btn">Buy Now</button></a>
+      </div>
+      <div class="shop-card">
+        <div class="shop-icon"><i class="fa-solid fa-rocket"></i></div>
+        <div class="shop-title">Growth Toolkit</div>
+        <div class="shop-desc">All-in-one bundle: checklists, planners, and growth hacks.</div>
+        <div class="shop-price">$39</div>
+        <a href="#contact"><button class="buy-btn">Buy Now</button></a>
+      </div>
+      <div class="shop-card">
+        <div class="shop-icon"><i class="fa-solid fa-magic-wand-sparkles"></i></div>
+        <div class="shop-title">Content Ideas Vault</div>
+        <div class="shop-desc">Never run out of content ideas again! 365+ prompts.</div>
+        <div class="shop-price">$15</div>
+        <a href="#contact"><button class="buy-btn">Buy Now</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="section-title">What Clients Say</div>
+    <div class="testimonials-carousel">
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="testimonial-photo">
+        <div class="testimonial-name">Sarah L.</div>
+        <div class="testimonial-text">"Rakib is a marketing wizard! My business doubled in 3 months. Highly recommended!"</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" class="testimonial-photo">
+        <div class="testimonial-name">James P.</div>
+        <div class="testimonial-text">"Super creative, super friendly, and always delivers results. 10/10!"</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="Client" class="testimonial-photo">
+        <div class="testimonial-name">Ayesha K.</div>
+        <div class="testimonial-text">"Loved the templates and the personal touch. Rakib truly cares about your success."</div>
+      </div>
+    </div>
+    <div class="trust-badges">
+      <span class="trust-badge"><i class="fa-solid fa-shield-heart"></i> 100% Satisfaction</span>
+      <span class="trust-badge"><i class="fa-solid fa-award"></i> Certified Expert</span>
+      <span class="trust-badge"><i class="fa-solid fa-users"></i> 200+ Happy Clients</span>
+    </div>
+    <div class="client-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Googleplex-Patio-Aug-2014.JPG" alt="Client Logo" class="client-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Unilever.svg" alt="Client Logo" class="client-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Client Logo" class="client-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Client Logo" class="client-logo">
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-title">Contact Rakib</div>
+    <form class="contact-form" action="mailto:rakib@email.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+    </form>
+    <div class="contact-links">
+      <a href="mailto:rakib@email.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://wa.me/1234567890" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Rakib Digital Marketing. All rights reserved.
+  </footer>
+
+  <script>
+    // Simple nav active state on scroll
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = Array.from(document.querySelectorAll('section, .section'));
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 80;
+      navLinks.forEach(link => {
+        let section = document.querySelector(link.getAttribute('href'));
+        if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
